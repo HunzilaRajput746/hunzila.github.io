@@ -1,0 +1,221 @@
+<head>
+    <title>Calculator</title>  
+</head>
+<style>
+.bg-image{
+    background-image: url(image/4th.jpg);
+    position: center;
+    height: 400px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(3px);
+}
+.bg-text{
+    position: absolute;
+    z-index: 2;
+    top: 2px;
+}
+.clr{
+    color: white;
+    margin-left: 70px;
+    font-size: 60px;
+}
+h4{
+    color: white;
+    margin-top: 2px;
+    margin-left: 100px;
+    font-size: 20px;
+}
+.Home{
+    color: white;
+    margin-left: 700px;
+    z-index: 3;
+    top: 40px;
+    font-size: 20px;
+    position: absolute;
+}
+#about{
+    color: white;
+    margin-left: 800px;
+    z-index: 3;
+    top: 40px;
+    font-size: 20px;
+    position: absolute;
+}
+#certificate{
+    color: white;
+    margin-left: 900px;
+    z-index: 3;
+    top: 40px;
+    font-size: 20px;
+    position: absolute;
+}
+#calculator{
+    color: white;
+    margin-left: 1030px;
+    z-index: 3;
+    top: 40px;
+    font-size: 20px;
+    position: absolute;
+}
+#Contect{
+    color: white;
+    margin-left: 1160px;
+    z-index: 3;
+    top: 40px;
+    font-size: 20px;
+    position: absolute;
+}
+h1{
+    font-size: 50px;
+    margin-left: 400px;
+    font-style:italic;
+    }
+h2{
+    font-size: 50px;
+    font-style: italic;
+    margin-left: 375;
+    color: brown;
+    border: 2px;
+}
+h3{
+    font-size: 50px;
+    font-style: italic;
+    margin-left: 525;
+    color: brown;
+}
+.hun{
+    margin-left: 500px;
+}
+.head3{
+    font-size: 50px;
+    font-style: italic;
+    margin-left: 450;
+    color: brown;
+}
+.btn{
+    border-radius: 20px;
+    background-color: black;
+    border: solid brown;
+    border-style:double;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    width: 50px;
+    font-size: 20px;
+}
+.btnn{
+    border-radius: 20px;
+    background-color: black;
+    border: solid brown;
+    border-style:double;
+    padding: 10px;
+    color: white;
+    width: 50px;
+    font-size: 20px;
+    margin-left: 550px;
+}
+#res{
+    border-radius: 20px;
+    background-color: black;
+    border: solid brown;
+    border-style:double;
+    padding: 10px;
+    color: white;
+    width: 212px;
+    font-size: 30px;
+    margin-left: 550px;
+    margin-top: 10px;
+}
+#Display{
+    background-color: black;
+    border-radius: 20px;
+    color: white;
+    border: solid brown;
+    border-style:double;
+    margin-top: 50px;
+    padding: 10px;
+    width: 212px;
+    font-size: 20px;
+    margin-left: 550px;
+    margin-bottom: 10px;
+}
+
+</style>
+<body>
+    <div class="bg-image"></div>
+    <a class="Home" href="index.html"> Home</a>
+    <a id="about" href="About.HTML"> About</a>
+    <a id="Certificate" href="Certificates.html"> Certificate</a>
+    <a id="calculator" href="Calculator.html"> Calculator</a>
+    <a id="Contect" href="Contect.html"> Contect Us</a>
+    <div class="bg-text">
+        <img src="image\logo.png" alt="No image" width="200px" height="200px">
+        <h1 class="clr">Believe In Your Self</h1>
+        <h4>No One keep you down</h4>
+    </div>
+    <input type="text" id="Display"placeholder="Enter a number">
+    <div>
+        <button class="btnn" onclick="press(1)">1</button>
+        <button class="btn" onclick="press(2)">2</button>
+        <button class="btn" onclick="press(3)">3</button>
+        <button class="btn" onclick="clrscreen()">CE</button>
+    </div>
+    <div>
+        <button class="btnn" onclick="press(4)">4</button>
+        <button class="btn" onclick="press(5)">5</button>
+        <button class="btn" onclick="press(6)">6</button>
+        <button class="btn" onclick="operation('*')">*</button>
+    </div>
+    <div>
+        <button class="btnn" onclick="press(7)">7</button>
+        <button class="btn" onclick="press(8)">8</button>
+        <button class="btn" onclick="press(9)">9</button>
+        <button class="btn" onclick="operation('/')">/</button>
+    </div>
+    <div>
+        <button class="btnn" onclick="press(0)">0</button>
+        <button class="btn" onclick="press('.')">.</button>
+        <button class="btn" onclick="operation('+')">+</button>
+        <button class="btn" onclick="operation('-')">-</button>
+    </div>
+    <button id="res" onclick="result('=')" >=</button>
+    
+    <h3 class="head3">Social Media Links</h3>
+    <img class="hun" src="image\Social.jpg" alt="No image" width="300px">
+    <script>
+        var num1;
+        var num2;
+        var symbol;
+        function press(val){
+            var num = document.getElementById("Display").value;
+            document.getElementById("Display").value = num + val;
+        }
+        function operation(op){
+            num1=document.getElementById("Display").value;
+            document.getElementById("Display").value =" " ;
+            symbol=op;
+        } 
+        function clrscreen(){
+            document.getElementById("Display").value = " ";
+        }
+        function result(){
+            var run;
+            document.getElementById("Display").value = num2
+            if (symbol == '+') {
+                run = parseFloat (num1) + parseFloat(num2)
+            }
+            else if (symbol == '-'){
+                run = parsefloat (num1)- parsefloat(num2)
+            }
+            else if (symbol == '*'){
+                run = parsefloat (num1)* parsefloat(num2)
+            }
+            else if (symbol == '/'){
+                run= parsefloat (num1)/ parsefloat(num2)
+            }
+            else{
+                 alert("invalid Number")
+            }
+        }
+    </script>
+</body>
